@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>联系我们 — 横峰俩运来</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ambient"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 48 48" fill="none"><path d="M24 4 44 14v20L24 44 4 34V14L24 4z" fill="#c47b3a"/><path d="M24 4 44 14 24 24 4 14 24 4z" fill="#e8a866"/><path d="M24 24v20L4 34V14l20 10z" fill="#a9622a"/><path d="M14 9l20 10v7l-4-2v-5L10 9.5 14 9z" fill="#fff3e4"/></svg>
+      <span class="brand-name">横峰俩运来</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="about.html">关于我们</a></li>
+      <li><a href="products.html">产品服务</a></li>
+      <li><a href="contact.html" class="active">联系我们</a></li>
+      <li><a href="contact.html" class="nav-cta">立即咨询</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" style="min-height:50vh">
+  <span class="eyebrow">联系我们</span>
+  <h1 style="font-size:clamp(40px,7vw,80px)">聊聊您的包装需求</h1>
+  <p class="sub">告诉我们您要装什么，剩下的交给横峰俩运来。工作日 30 分钟内响应。</p>
+</header>
+
+<section class="section" style="padding-top:20px">
+  <div class="grid grid-2" style="align-items:start">
+    <!-- 联系信息 -->
+    <div class="glass card reveal" style="padding:40px 36px">
+      <h3 style="margin-bottom:14px">联系方式</h3>
+      <div class="contact-item">
+        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2z"/></svg></div>
+        <div><h4>咨询热线</h4><p>13699571159（业务经理 / 微信同号）<br>13699571159（办公室）</p></div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></div>
+        <div><h4>电子邮箱</h4><p>1120229893@qq.com</p></div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><h4>公司地址</h4><p>江西省上饶市横峰县工业园区<br>（欢迎预约来厂参观考察）</p></div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+        <div><h4>营业时间</h4><p>周一至周六 8:00 – 18:00<br>紧急订单支持 7×24 小时对接</p></div>
+      </div>
+    </div>
+
+    <!-- 留言表单 -->
+    <div class="glass card reveal" style="padding:40px 36px">
+      <h3 style="margin-bottom:6px">在线留言</h3>
+      <p style="color:var(--text-secondary);font-size:14px;margin-bottom:22px">留下需求，我们会尽快与您联系并提供免费报价。</p>
+      <form class="form-grid" onsubmit="event.preventDefault();this.reset();alert('感谢您的留言！我们会尽快与您联系。');">
+        <input type="text" placeholder="您的称呼 *" required>
+        <input type="tel" placeholder="联系电话 *" required>
+        <input type="text" placeholder="公司名称（选填）">
+        <textarea placeholder="需求描述：例如装什么产品、尺寸重量、大概数量… *" required></textarea>
+        <button type="submit" class="btn btn-primary" style="width:100%">提交留言</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="dark-band reveal">
+    <h2>现在下单，48 小时发货。</h2>
+    <p>标准规格纸箱现货充足，定制产品免费打样。拨打 13699571159，让好纸箱护好货。</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 48 48" fill="none" width="26" height="26"><path d="M24 4 44 14v20L24 44 4 34V14L24 4z" fill="#c47b3a"/><path d="M24 4 44 14 24 24 4 14 24 4z" fill="#e8a866"/><path d="M24 24v20L4 34V14l20 10z" fill="#a9622a"/></svg>
+        <span class="brand-name">横峰俩运来</span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="about.html">关于我们</a></li>
+        <li><a href="products.html">产品服务</a></li>
+        <li><a href="contact.html">联系我们</a></li>
+      </ul>
+    </div>
+    <p class="footer-copy">Copyright © 2026 横峰俩运来包装有限公司 保留所有权利。<br>专业包装纸箱制造 · 瓦楞纸箱 · 重型包装 · 彩印包装定制</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

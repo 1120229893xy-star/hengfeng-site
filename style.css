@@ -1,0 +1,275 @@
+/* ============ 横峰俩运来 · 苹果风格企业官网 ============ */
+:root {
+  --bg: #f5f5f7;
+  --bg-dark: #000;
+  --text: #1d1d1f;
+  --text-secondary: #6e6e73;
+  --accent: #c47b3a;          /* 牛皮纸箱主题色 */
+  --accent-deep: #9a5a22;
+  --blue: #0071e3;
+  --glass: rgba(255, 255, 255, 0.62);
+  --glass-strong: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(255, 255, 255, 0.55);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  --radius: 28px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro SC",
+    "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+  overflow-x: hidden;
+}
+
+/* ---------- 背景光晕 ---------- */
+.ambient {
+  position: fixed; inset: 0; z-index: -1; overflow: hidden;
+  background:
+    radial-gradient(900px 600px at 12% -8%, rgba(255, 196, 128, 0.35), transparent 60%),
+    radial-gradient(800px 560px at 92% 12%, rgba(120, 180, 255, 0.28), transparent 60%),
+    radial-gradient(1000px 700px at 50% 110%, rgba(255, 170, 100, 0.20), transparent 65%),
+    var(--bg);
+}
+
+/* ---------- 导航栏（磨砂玻璃） ---------- */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  backdrop-filter: saturate(180%) blur(22px);
+  -webkit-backdrop-filter: saturate(180%) blur(22px);
+  background: rgba(251, 251, 253, 0.72);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.nav-inner {
+  max-width: 1080px; margin: 0 auto; padding: 0 22px;
+  height: 56px; display: flex; align-items: center; justify-content: space-between;
+}
+.brand {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none; color: var(--text);
+}
+.brand svg { width: 30px; height: 30px; }
+.brand-name { font-size: 18px; font-weight: 700; letter-spacing: 0.02em; }
+.nav-links { display: flex; gap: 34px; list-style: none; }
+.nav-links a {
+  color: rgba(29, 29, 31, 0.78); text-decoration: none;
+  font-size: 14px; transition: color 0.25s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--accent-deep); }
+.nav-cta {
+  font-size: 13px; color: #fff !important; background: var(--accent);
+  padding: 7px 16px; border-radius: 980px; transition: background 0.25s;
+}
+.nav-cta:hover { background: var(--accent-deep); }
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 92vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center;
+  padding: 140px 24px 80px;
+}
+.hero-logo { width: 108px; height: 108px; margin-bottom: 28px; filter: drop-shadow(0 16px 36px rgba(196, 123, 58, 0.35)); animation: float 6s ease-in-out infinite; }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+
+.hero h1 {
+  font-size: clamp(52px, 9vw, 104px); font-weight: 800; line-height: 1.05;
+  letter-spacing: -0.02em;
+  background: linear-gradient(92deg, #1d1d1f 10%, #8a5a2b 45%, #c47b3a 65%, #1d1d1f 92%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero .tagline {
+  margin-top: 22px; font-size: clamp(20px, 3vw, 30px);
+  font-weight: 600; color: var(--text);
+}
+.hero .sub {
+  margin-top: 14px; font-size: clamp(15px, 2vw, 19px);
+  color: var(--text-secondary); max-width: 640px; line-height: 1.6;
+}
+.hero-actions { margin-top: 36px; display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
+
+.btn {
+  display: inline-block; text-decoration: none; font-size: 17px; font-weight: 500;
+  padding: 13px 30px; border-radius: 980px; transition: all 0.3s;
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-deep); transform: translateY(-2px); box-shadow: 0 12px 28px rgba(196,123,58,.35); }
+.btn-ghost {
+  color: var(--accent-deep);
+  background: var(--glass);
+  border: 1px solid rgba(196, 123, 58, 0.35);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+}
+.btn-ghost:hover { background: var(--glass-strong); transform: translateY(-2px); }
+
+/* ---------- 通用区块 ---------- */
+.section { max-width: 1080px; margin: 0 auto; padding: 90px 24px; }
+.section-head { text-align: center; margin-bottom: 56px; }
+.section-head h2 { font-size: clamp(32px, 5vw, 52px); font-weight: 800; letter-spacing: -0.02em; }
+.section-head p { margin-top: 14px; color: var(--text-secondary); font-size: 18px; }
+
+.eyebrow {
+  display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 0.12em;
+  color: var(--accent-deep); text-transform: uppercase; margin-bottom: 14px;
+  padding: 6px 14px; border-radius: 980px;
+  background: rgba(196, 123, 58, 0.12); border: 1px solid rgba(196, 123, 58, 0.2);
+}
+
+/* ---------- 磨砂玻璃卡片 ---------- */
+.glass {
+  background: var(--glass);
+  backdrop-filter: saturate(160%) blur(24px);
+  -webkit-backdrop-filter: saturate(160%) blur(24px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.grid { display: grid; gap: 24px; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 860px) { .grid-3, .grid-2 { grid-template-columns: 1fr; } }
+
+.card { padding: 38px 32px; transition: transform 0.35s, box-shadow 0.35s; }
+.card:hover { transform: translateY(-8px); box-shadow: 0 30px 70px rgba(0,0,0,0.12); }
+.card .icon {
+  width: 58px; height: 58px; border-radius: 16px; display: flex;
+  align-items: center; justify-content: center; margin-bottom: 22px;
+  background: linear-gradient(135deg, rgba(255,206,150,.9), rgba(196,123,58,.85));
+  box-shadow: 0 10px 24px rgba(196,123,58,.3);
+}
+.card .icon svg { width: 30px; height: 30px; }
+.card h3 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+.card p { color: var(--text-secondary); font-size: 15px; line-height: 1.7; }
+
+/* ---------- 数据条 ---------- */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 44px 36px; }
+@media (max-width: 860px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+.stat { text-align: center; }
+.stat .num {
+  font-size: clamp(34px, 4.5vw, 52px); font-weight: 800;
+  background: linear-gradient(120deg, var(--accent-deep), var(--accent));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.stat .label { margin-top: 6px; color: var(--text-secondary); font-size: 14px; }
+
+/* ---------- 深色大图区 ---------- */
+.dark-band {
+  background: linear-gradient(160deg, #17130f 0%, #241a11 55%, #17130f 100%);
+  border-radius: var(--radius); overflow: hidden;
+  padding: 80px 48px; text-align: center; color: #f5f5f7; position: relative;
+}
+.dark-band::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(680px 340px at 50% -10%, rgba(255, 178, 102, 0.25), transparent 70%);
+}
+.dark-band > * { position: relative; }
+.dark-band h2 { font-size: clamp(30px, 4.5vw, 46px); font-weight: 800; }
+.dark-band p { margin-top: 16px; color: rgba(245,245,247,0.72); font-size: 17px; line-height: 1.8; max-width: 680px; margin-left: auto; margin-right: auto; }
+
+/* ---------- 产品页 ---------- */
+.product-visual {
+  height: 210px; border-radius: 20px; margin-bottom: 26px;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(150deg, rgba(255,222,184,.75), rgba(222,167,110,.55));
+  overflow: hidden;
+}
+.product-visual svg { width: 120px; height: 120px; filter: drop-shadow(0 14px 24px rgba(122,74,32,.3)); }
+.tag {
+  display: inline-block; font-size: 12px; font-weight: 600; color: var(--accent-deep);
+  background: rgba(196,123,58,.12); padding: 4px 12px; border-radius: 980px; margin-bottom: 12px;
+}
+
+/* ---------- 时间线 ---------- */
+.timeline { position: relative; margin-top: 20px; }
+.timeline::before {
+  content: ""; position: absolute; left: 19px; top: 8px; bottom: 8px; width: 2px;
+  background: linear-gradient(rgba(196,123,58,.6), rgba(196,123,58,.08));
+}
+.tl-item { position: relative; padding: 0 0 38px 60px; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-dot {
+  position: absolute; left: 8px; top: 4px; width: 24px; height: 24px; border-radius: 50%;
+  background: linear-gradient(135deg, #ffce96, var(--accent));
+  border: 4px solid #fff; box-shadow: 0 4px 12px rgba(196,123,58,.4);
+}
+.tl-item .year { font-size: 14px; font-weight: 700; color: var(--accent-deep); }
+.tl-item h4 { font-size: 19px; font-weight: 700; margin: 4px 0 6px; }
+.tl-item p { color: var(--text-secondary); font-size: 15px; line-height: 1.7; }
+
+/* ---------- 联系页 ---------- */
+.contact-item { display: flex; gap: 18px; align-items: flex-start; padding: 22px 0; border-bottom: 1px solid rgba(0,0,0,.06); }
+.contact-item:last-child { border-bottom: none; }
+.contact-item .ci-icon {
+  flex: 0 0 46px; height: 46px; border-radius: 13px; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, rgba(255,206,150,.9), rgba(196,123,58,.85));
+}
+.contact-item .ci-icon svg { width: 24px; height: 24px; }
+.contact-item h4 { font-size: 16px; font-weight: 700; }
+.contact-item p { color: var(--text-secondary); font-size: 15px; margin-top: 3px; line-height: 1.6; }
+
+.form-grid { display: grid; gap: 16px; }
+.form-grid input, .form-grid textarea {
+  width: 100%; padding: 15px 18px; border-radius: 14px; font-size: 15px;
+  border: 1px solid rgba(0,0,0,.1); background: rgba(255,255,255,.75);
+  font-family: inherit; color: var(--text); outline: none; transition: all .25s;
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.form-grid input:focus, .form-grid textarea:focus {
+  border-color: var(--accent); box-shadow: 0 0 0 4px rgba(196,123,58,.15);
+}
+.form-grid textarea { min-height: 130px; resize: vertical; }
+.form-grid button {
+  border: none; cursor: pointer; font-family: inherit;
+}
+
+/* ---------- 页脚 ---------- */
+.footer {
+  margin-top: 40px; border-top: 1px solid rgba(0,0,0,.08);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  background: rgba(251,251,253,.6);
+}
+.footer-inner { max-width: 1080px; margin: 0 auto; padding: 44px 24px 34px; }
+.footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 28px; }
+.footer .brand-name { font-size: 17px; }
+.footer-links { display: flex; gap: 26px; list-style: none; flex-wrap: wrap; }
+.footer-links a { color: var(--text-secondary); text-decoration: none; font-size: 14px; }
+.footer-links a:hover { color: var(--accent-deep); }
+.footer-copy { margin-top: 26px; font-size: 12px; color: #a1a1a6; line-height: 1.8; }
+
+/* ---------- 品牌IP：运宝 ---------- */
+.ip-wrap {
+  display: flex; align-items: center; gap: 48px; padding: 52px 48px;
+}
+.ip-figure { flex: 0 0 260px; display: flex; justify-content: center; }
+.mascot { width: 240px; height: auto; animation: float 5s ease-in-out infinite; filter: drop-shadow(0 18px 30px rgba(169, 98, 42, 0.28)); }
+.mascot .wave { transform-origin: 186px 124px; animation: wave 2.2s ease-in-out infinite; }
+@keyframes wave { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-16deg); } }
+.ip-body h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; letter-spacing: -0.02em; }
+.ip-body > p { margin-top: 14px; color: var(--text-secondary); font-size: 16px; line-height: 1.8; }
+.ip-tags { margin-top: 22px; display: flex; gap: 10px; flex-wrap: wrap; }
+.ip-tags span {
+  font-size: 13px; font-weight: 600; color: var(--accent-deep);
+  background: rgba(196, 123, 58, 0.12); border: 1px solid rgba(196, 123, 58, 0.22);
+  padding: 7px 16px; border-radius: 980px;
+}
+@media (max-width: 860px) {
+  .ip-wrap { flex-direction: column; text-align: center; padding: 40px 26px; }
+  .ip-tags { justify-content: center; }
+}
+
+/* ---------- 进场动画 ---------- */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ---------- 移动端 ---------- */
+@media (max-width: 700px) {
+  .nav-links { display: none; }
+  .hero { min-height: 78vh; padding-top: 120px; }
+  .section { padding: 60px 20px; }
+  .dark-band { padding: 56px 26px; }
+}
